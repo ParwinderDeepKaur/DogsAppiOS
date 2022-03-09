@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2LJ-ux-jhE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dogs Breeds-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="I3g-vd-Cab">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="muJ-Jz-lj3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ie5-LZ-f5a"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I3g-vd-Cab" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="61J-nk-PsM"/>
+                            <constraint firstAttribute="bottom" secondItem="I3g-vd-Cab" secondAttribute="bottom" id="bv9-zf-gwx"/>
+                            <constraint firstItem="I3g-vd-Cab" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uDz-9Y-70J"/>
+                            <constraint firstItem="I3g-vd-Cab" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uu1-Nn-nCg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dogs Breeds" id="Xcq-2O-iET"/>
+                    <connections>
+                        <outlet property="list_table" destination="I3g-vd-Cab" id="4IE-gU-BV6"/>
+                        <segue destination="RGI-nB-U3e" kind="show" identifier="showDetailViewSegueIdentifier" id="NK0-QQ-zhU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+        </scene>
+        <!--Show Detail View Controller-->
+        <scene sceneID="qzI-T4-JUN">
+            <objects>
+                <viewController storyboardIdentifier="ShowDetailViewController" id="RGI-nB-U3e" customClass="ShowDetailViewController" customModule="Dogs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="No0-Dw-a7h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rDu-PI-L6I">
+                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rDu-PI-L6I" secondAttribute="height" multiplier="1:1" id="fQO-jp-SkV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-EH-VrF">
+                                <rect key="frame" x="138.5" y="532" width="137" height="31"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fetch New Image"/>
+                                <connections>
+                                    <action selector="tapFetchNewImage:" destination="RGI-nB-U3e" eventType="touchUpInside" id="laK-lO-mKy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AEJ-dG-UFb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rDu-PI-L6I" firstAttribute="leading" secondItem="AEJ-dG-UFb" secondAttribute="leading" id="55O-Qv-1MI"/>
+                            <constraint firstItem="RGy-EH-VrF" firstAttribute="top" secondItem="rDu-PI-L6I" secondAttribute="bottom" constant="30" id="Haw-Z5-9u0"/>
+                            <constraint firstItem="RGy-EH-VrF" firstAttribute="centerX" secondItem="No0-Dw-a7h" secondAttribute="centerX" id="Hix-qA-aEV"/>
+                            <constraint firstItem="rDu-PI-L6I" firstAttribute="trailing" secondItem="AEJ-dG-UFb" secondAttribute="trailing" id="Ta5-gR-Huf"/>
+                            <constraint firstItem="rDu-PI-L6I" firstAttribute="top" secondItem="AEJ-dG-UFb" secondAttribute="top" id="q82-w9-GRN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="j1O-VU-9Cg"/>
+                    <connections>
+                        <outlet property="breed_img" destination="rDu-PI-L6I" id="zYs-qs-7Ln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFF-UG-qVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879.7101449275365" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xdQ-bb-Mkz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2LJ-ux-jhE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fue-Wx-wta">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GMo-hE-x2t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNU-8J-guK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
